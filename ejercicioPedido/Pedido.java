@@ -1,4 +1,5 @@
 package java9POOFundamentos.ejercicioPedido;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Pedido {
@@ -10,6 +11,7 @@ public class Pedido {
 
 
     public Pedido() {
+        this.productos = new ArrayList<>();
     }
 
     public Pedido(int numeroPedido, String nombreCliente, List<String> productos,
@@ -58,24 +60,24 @@ public class Pedido {
     public void agregarProducto(String producto, double precio) {
         productos.add(producto);
         total += precio;
-        System.out.println("Usted ha Añadido el producto: " + producto);
+        System.out.println("Usted ha Añadido: " + producto+ " A su orden");
     }
 
     public void calcularDescuento(double porcentaje) {
         if (porcentaje >= 0 && porcentaje <= 100) {
             double descuento = total * (porcentaje / 100);
             total -= descuento;
-            System.out.println("Su ahorro es de: " + porcentaje);
-            System.out.println("El total del pedido es: " + (total-descuento));
+            System.out.println("Su ahorro es de: " + descuento);
+            System.out.println("El total del pedido es: " + total);
         } else {
-            System.out.println("Porcentaje No aplica");
+            System.out.println("El porcentaje "+porcentaje+"% No aplica");
         }
     }
 
     public void mostrarPedido() {
         System.out.println("Número de pedido: " + numeroPedido);
         System.out.println("Cliente: " + nombreCliente);
-        System.out.println("Productos:");
+        System.out.println("---Detalle de Pedido---");
         for (String producto : productos) {
             System.out.println(" - " + producto);
         }

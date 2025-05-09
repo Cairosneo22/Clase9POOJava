@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         Pedido pedido1 = new Pedido();
-        pedido1.setNumeroPedido(1);
+        pedido1.setNumeroPedido(100);
         pedido1.setNombreCliente("Carlos Díaz");
         pedido1.agregarProducto("Hamburguesa", 25500);
         pedido1.agregarProducto("Papitas Fritas", 12000);
@@ -19,11 +19,12 @@ public class Main {
 
         List<String> productos = new ArrayList<>();
 
-        Pedido pedido2 = new Pedido(1,"juan",productos,double total);
-Pedido
-        
-
-        Pedido pedido3 = new Pedido(2,"Carlitos",productos,double total);
+        Pedido pedido2 = new Pedido(101,"juan",productos, 0);
+        pedido2.agregarProducto("Hamburguesita", 22500);
+        pedido2.agregarProducto("Papotas Fritas", 18000);
+        pedido2.calcularDescuento(-80);
+        pedido2.calcularDescuento(20);
+        pedido2.mostrarPedido();
 
 
 
